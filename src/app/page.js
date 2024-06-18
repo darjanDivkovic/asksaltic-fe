@@ -75,7 +75,7 @@ const HomePage = () => {
       </div>
 
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-25"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-40"
         autoPlay
         muted
         loop
