@@ -79,7 +79,7 @@ const HomePage = () => {
 
         <p className='text-[3vw] sm:text-[15px] font-extralight opacity-80 mt-8 w-full sm:w-[55%] text-center lg:text-left'>
           Dobrodošli na službeni website Airsoft Kluba Saltic Tuzla!<br /> Pridružite nam se u avanturama punim adrenalina, strategije i timskog duha.<br /><br /> Bilo da ste iskusni igrač ili početnik, kod nas ćete pronaći nezaboravna iskustva, prijateljstva i izazove koji će vas motivirati.
-          <strong className='underline pl-2'>Uskoro sve informacije o članstvima, timu, susretima i više na ovom sajtu...</strong>
+          <strong className='pl-2'>Uskoro sve informacije o članstvima, timu, susretima i više na ovom sajtu...</strong>
         </p>
       </div>
 
