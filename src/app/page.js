@@ -7,7 +7,7 @@ import gsap from 'gsap';
 
 const HomePage = () => {
   const logoRef = useRef(null);
-  const [showButton, setShowButton] = useState(true); // State variable to control button visibility
+  const [showButton, setShowButton] = useState(false); // State variable to control button visibility
 
   useEffect(() => {
     const logoElement = logoRef.current;
@@ -32,7 +32,7 @@ const HomePage = () => {
       } else {
         flipVertically();
       }
-    }, 3000);
+    }, 6000);
 
     // Check screen size and update state variable
     const handleResize = () => {
@@ -41,6 +41,9 @@ const HomePage = () => {
 
     handleResize(); // Call once on initial render
     window.addEventListener('resize', handleResize);
+
+    // Set the initial state for showButton after determining screen size
+    setShowButton(window.innerWidth > 768);
 
     return () => {
       clearInterval(flipInterval); // Clear the interval when component unmounts
