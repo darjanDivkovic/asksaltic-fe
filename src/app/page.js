@@ -24,8 +24,15 @@ const HomePage = () => {
       gsap.to(logoElement, { rotationX: 360, duration: 1, ease: 'power2.inOut' });
     };
 
-    logoElement.addEventListener('mouseenter', flipHorizontally);
-    logoElement.addEventListener('mouseleave', flipVertically);
+    // Periodically flip the logo every 6 seconds
+    const flipInterval = setInterval(() => {
+      const isHorizontal = Math.random() > 0.5;
+      if (isHorizontal) {
+        flipHorizontally();
+      } else {
+        flipVertically();
+      }
+    }, 3000);
 
     // Check screen size and update state variable
     const handleResize = () => {
@@ -36,8 +43,7 @@ const HomePage = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      logoElement.removeEventListener('mouseenter', flipHorizontally);
-      logoElement.removeEventListener('mouseleave', flipVertically);
+      clearInterval(flipInterval); // Clear the interval when component unmounts
       window.removeEventListener('resize', handleResize);
     };
   }, []);
@@ -50,7 +56,7 @@ const HomePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='flex w-full justify-center lg:justify-between  py-10 lg:py-20 relative z-10 items-center'>
+      <div className='flex w-full justify-center lg:justify-between py-10 lg:py-20 relative z-10 items-center'>
         <div ref={logoRef}>
           <Image src="/logo.png" alt="Logo" width={76} height={76} />
         </div>
